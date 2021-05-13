@@ -1,0 +1,374 @@
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;==========================================================
+
+[colors]
+foreground         = #abb2bf
+foreground-alt     = #666666
+foreground-focused = #282c34
+background         = #121417
+background-focused = #abb2bf
+red    = #be5046
+green  = #98c379
+yellow = #d19a66
+blue = = #83a598
+
+[bar/laptopbar2]
+monitor = eDP-1
+enable-ipc = true
+wm-restack = bspwm
+height = 50
+foreground = ${colors.foreground}
+background = ${colors.background}
+font-1 = SauceCodePro Nerd Font:style=Bold:size=23;2
+font-0 = "Fantasque Sans Mono:size=23;2"
+#font-0 = FiraCode Nerd Font:size=23;1
+#font-1 = "Material Icons:size=13;4"
+#font-0 = Roboto:size=23;1
+#font-0 = SourceCodePro Nerd Font:size=23;1
+padding-right = 1
+module-margin = 1
+modules-left   = bspwm xwindow ethernet
+modules-center = date
+modules-right  = wlan vpn-nordvpn-status vpn-wireguard-wg cpu memory battery backlight pulseaudio
+cursor-click = pointer
+tray-position = right
+
+tray-background = ${colors.background}
+tray-padding = 2
+tray-reparent = true
+tray-maxsize=1000
+
+[bar/laptopbar]
+#monitor = eDP-1
+monitor = ${env:MONITOR:}
+enable-ipc = true
+wm-restack = bspwm
+dpi = 70
+height = 40
+foreground = ${colors.foreground}
+background = ${colors.background}
+font-1 = SauceCodePro Nerd Font:style=Bold:size=15;2
+font-0 = "Fantasque Sans Mono:size=15;2"
+padding-right = 1
+module-margin = 1
+modules-left   = bspwm xwindow ethernet
+modules-center = date
+modules-right  = wlan vpn-nordvpn-status vpn-wireguard-wg cpu memory battery backlight pulseaudio
+cursor-click = pointer
+tray-position = right
+
+tray-padding = 2
+tray-reparent = true
+tray-maxsize=1000
+
+
+#########################################################
+[bar/laptopbar-ext]
+monitor = HDMI-1
+enable-ipc = true
+wm-restack = bspwm
+dpi = 80
+height = 40
+foreground = ${colors.foreground}
+background = ${colors.background}
+font-1 = SauceCodePro Nerd Font:style=Bold:size=15;2
+font-0 = "Fantasque Sans Mono:size=15;2"
+padding-right = 1
+module-margin = 1
+modules-left   = bspwm xwindow ethernet
+modules-center = date
+modules-right  = wlan vpn-nordvpn-status vpn-wireguard-wg cpu memory battery backlight pulseaudio
+cursor-click = pointer
+
+tray-padding = 2
+tray-reparent = true
+tray-maxsize=1000
+#########################################################
+
+[bar/laptopbar-ext2]
+monitor = DP-2
+enable-ipc = true
+wm-restack = bspwm
+height = 40
+foreground = ${colors.foreground}
+background = ${colors.background}
+font-1 = SauceCodePro Nerd Font:style=Bold:size=15;2
+font-0 = "Fantasque Sans Mono:size=15;2"
+#font-1 = SauceCodePro Nerd Font:style=Bold:size=15;2
+#font-0 = Roboto:size=11;1
+padding-right = 1
+module-margin = 1
+modules-left   = bspwm xwindow ethernet
+modules-center = date
+modules-right  = wlan vpn-nordvpn-status vpn-wireguard-wg cpu memory battery backlight pulseaudio
+cursor-click = pointer
+tray-position = right
+tray-padding = 2
+tray-reparent = true
+tray-maxsize=1000
+
+[bar/laptopbar-ext3]
+monitor = DP-1
+enable-ipc = true
+wm-restack = bspwm
+height = 40
+dpi = 96
+foreground = ${colors.foreground}
+background = ${colors.background}
+font-1 = SauceCodePro Nerd Font:style=Bold:size=15;2
+font-0 = "Fantasque Sans Mono:size=15;2"
+#font-1 = SauceCodePro Nerd Font:style=Bold:size=15;2
+#font-0 = Roboto:size=11;1
+padding-right = 1
+module-margin = 1
+modules-left   = bspwm xwindow ethernet
+modules-center = date
+modules-right  = wlan vpn-nordvpn-status vpn-wireguard-wg cpu memory battery backlight pulseaudio
+cursor-click = pointer
+tray-position = right
+tray-padding = 2
+tray-reparent = true
+tray-maxsize=1000
+
+
+#########################################################
+[bar/extbar1]
+monitor = DP-1
+enable-ipc = true
+wm-restack = bspwm
+height = 20
+foreground = ${colors.foreground}
+background = ${colors.background}
+font-1 = SauceCodePro Nerd Font:style=Bold:size=15;2
+font-0 = Roboto:size=23;1
+padding-right = 1
+module-margin = 1
+modules-left   = bspwm
+modules-center = date
+modules-right  = 
+cursor-click = pointer
+
+[bar/extbar2]
+monitor = DP2-2
+enable-ipc = true
+wm-restack = bspwm
+height = 22
+foreground = ${colors.foreground}
+background = ${colors.background}
+font-0 = SauceCodePro Nerd Font:style=Bold:size=10;2
+padding-right = 1
+module-margin = 1
+modules-left   = bspwm ethernet wlan
+modules-center = date
+modules-right  = cpu temperature memory alsa sysmenu
+cursor-click = pointer
+tray-position = right
+
+
+##################################################
+###                  MODULES                   ###
+##################################################
+
+[module/bspwm]
+type = internal/bspwm
+label-focused       = %name%
+label-focused-empty = ·
+label-occupied      = %name%
+label-urgent        = %name%
+label-empty         = ·
+label-focused-padding        = 1
+label-focused-empty-padding  = 1
+label-occupied-padding       = 1
+label-urgent-padding         = 1
+label-empty-padding          = 1
+label-focused-foreground       = ${colors.foreground-focused}
+label-focused-background       = ${colors.background-focused}
+label-focused-empty-foreground = ${colors.foreground-focused}
+label-focused-empty-background = ${colors.background-focused}
+label-urgent-foreground        = ${colors.red}
+
+label-dimmed-foreground = ${colors.red}
+label-dimmed-focused-background = ${colors.red}
+
+#########################################################
+
+[module/vpn-wireguard-wg]
+type = custom/script
+exec = ~/.config/polybar/vpn-wireguard-wg.sh
+interval = 5
+click-left = ~/.config/polybar/vpn-wireguard-wg.sh --toggle &
+
+#########################################################
+
+[module/system-bluetooth-bluetoothctl]
+type = custom/script
+exec = ~/.config/polybar/system-bluetooth-bluetoothctl.sh
+tail = true
+click-left = ~/.config/polybar/system-bluetooth-bluetoothctl.sh --toggle &
+
+[module/vpn-nordvpn-status]
+type = custom/script
+exec = ~/.config/polybar/vpn-nordvpn-status.sh
+interval = 5
+
+#########################################################
+
+[module/date]
+type = internal/date
+interval = 1
+label = %time% - %date%
+time     = %R
+date     = %a, %b %d
+time-alt = %T
+date-alt = %A, %B %d, %Y
+
+#########################################################
+
+[module/ethernet]
+type = internal/network
+interface = enp0s31f6
+format-connected-prefix    = " "
+label-connected         = %local_ip% ( %upspeed%  %downspeed%)
+
+#########################################################
+
+[module/wlan]
+type = internal/network
+interface = wlp0s20f3
+format-connected-prefix    = "直  "
+format-disconnected-prefix = "睊  "
+format-disconnected-prefix-foreground = ${colors.red}
+;label-connected         = %essid% ( %upspeed%  %downspeed%)
+label-connected         = %essid% 
+label-disconnected      = off
+label-disconnected-foreground = ${colors.red}
+
+#########################################################
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:60:...%
+label-padding = 0
+
+#########################################################
+
+;[module/package-updates]
+;type = custom/script
+;exec = ~/.config/polybar/scripts/check-updates.sh
+;interval = 1000
+;label = %output%
+;format-prefix = ""
+
+#########################################################
+
+[module/cpu]
+type = internal/cpu
+format-prefix = " "
+
+#########################################################
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = ${env:THERMAL}
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+label-warn-foreground = ${colors.red}
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+
+#########################################################
+
+[module/memory]
+type = internal/memory
+format-prefix = "﬙  "
+label         = %gb_used%
+
+#########################################################
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+format-discharging = <ramp-capacity> <label-discharging>
+format-charging    = <animation-charging> <label-charging>
+format-full        = <ramp-capacity> <label-full>
+format-charging-foreground = ${colors.yellow}
+format-full-foreground     = ${colors.green}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+animation-charging-framerate = 1000
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+
+#########################################################
+
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = true
+
+format-volume = <ramp-volume> <bar-volume>
+format-muted-prefix = "ﱝ  "
+format-muted = <bar-volume>
+
+ramp-volume-0 = "奄"
+ramp-volume-1 = "奔"
+ramp-volume-2 = "墳"
+
+bar-volume-width     = 11
+bar-volume-indicator =
+bar-volume-fill      = -
+bar-volume-empty     = -
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+click-right = pavucontrol &
+ramp-headphones-0 = 
+ramp-headphones-1 = 
+
+#########################################################
+
+[module/alsa]
+type = internal/alsa
+format-volume = <ramp-volume> <bar-volume>
+format-muted-prefix = "ﱝ "
+label-muted = sound muted
+ramp-volume-0 = 奄
+ramp-volume-1 = 奔
+ramp-volume-2 = 墳
+bar-volume-width     = 11
+bar-volume-indicator =
+bar-volume-fill      = -
+bar-volume-empty     = -
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+#########################################################
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+format = <ramp>  <label>
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+
+#########################################################
+
+[module/sysmenu]
+type = custom/script
+exec = echo 
+click-left = ~/.config/polybar/scripts/powermenupoly
