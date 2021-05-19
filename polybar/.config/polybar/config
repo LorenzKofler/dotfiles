@@ -9,44 +9,17 @@
 ;==========================================================
 
 [colors]
-foreground         = #abb2bf
+foreground         = #a89984
 foreground-alt     = #666666
 foreground-focused = #282c34
-background         = #121417
+background         = #282828
 background-focused = #abb2bf
 red    = #be5046
 green  = #98c379
 yellow = #d19a66
 blue = = #83a598
 
-[bar/laptopbar2]
-monitor = eDP-1
-enable-ipc = true
-wm-restack = bspwm
-height = 50
-foreground = ${colors.foreground}
-background = ${colors.background}
-font-1 = SauceCodePro Nerd Font:style=Bold:size=23;2
-font-0 = "Fantasque Sans Mono:size=23;2"
-#font-0 = FiraCode Nerd Font:size=23;1
-#font-1 = "Material Icons:size=13;4"
-#font-0 = Roboto:size=23;1
-#font-0 = SourceCodePro Nerd Font:size=23;1
-padding-right = 1
-module-margin = 1
-modules-left   = bspwm xwindow ethernet
-modules-center = date
-modules-right  = wlan vpn-nordvpn-status vpn-wireguard-wg cpu memory battery backlight pulseaudio
-cursor-click = pointer
-tray-position = right
-
-tray-background = ${colors.background}
-tray-padding = 2
-tray-reparent = true
-tray-maxsize=1000
-
 [bar/laptopbar]
-#monitor = eDP-1
 monitor = ${env:MONITOR:}
 enable-ipc = true
 wm-restack = bspwm
@@ -55,7 +28,7 @@ height = 40
 foreground = ${colors.foreground}
 background = ${colors.background}
 font-1 = SauceCodePro Nerd Font:style=Bold:size=15;2
-font-0 = "Fantasque Sans Mono:size=15;2"
+font-0 = "Fantasque Sans Mono:style=Bold:size=15;2"
 padding-right = 1
 module-margin = 1
 modules-left   = bspwm xwindow ethernet
@@ -67,110 +40,6 @@ tray-position = right
 tray-padding = 2
 tray-reparent = true
 tray-maxsize=1000
-
-
-#########################################################
-[bar/laptopbar-ext]
-monitor = HDMI-1
-enable-ipc = true
-wm-restack = bspwm
-dpi = 80
-height = 40
-foreground = ${colors.foreground}
-background = ${colors.background}
-font-1 = SauceCodePro Nerd Font:style=Bold:size=15;2
-font-0 = "Fantasque Sans Mono:size=15;2"
-padding-right = 1
-module-margin = 1
-modules-left   = bspwm xwindow ethernet
-modules-center = date
-modules-right  = wlan vpn-nordvpn-status vpn-wireguard-wg cpu memory battery backlight pulseaudio
-cursor-click = pointer
-
-tray-padding = 2
-tray-reparent = true
-tray-maxsize=1000
-#########################################################
-
-[bar/laptopbar-ext2]
-monitor = DP-2
-enable-ipc = true
-wm-restack = bspwm
-height = 40
-foreground = ${colors.foreground}
-background = ${colors.background}
-font-1 = SauceCodePro Nerd Font:style=Bold:size=15;2
-font-0 = "Fantasque Sans Mono:size=15;2"
-#font-1 = SauceCodePro Nerd Font:style=Bold:size=15;2
-#font-0 = Roboto:size=11;1
-padding-right = 1
-module-margin = 1
-modules-left   = bspwm xwindow ethernet
-modules-center = date
-modules-right  = wlan vpn-nordvpn-status vpn-wireguard-wg cpu memory battery backlight pulseaudio
-cursor-click = pointer
-tray-position = right
-tray-padding = 2
-tray-reparent = true
-tray-maxsize=1000
-
-[bar/laptopbar-ext3]
-monitor = DP-1
-enable-ipc = true
-wm-restack = bspwm
-height = 40
-dpi = 96
-foreground = ${colors.foreground}
-background = ${colors.background}
-font-1 = SauceCodePro Nerd Font:style=Bold:size=15;2
-font-0 = "Fantasque Sans Mono:size=15;2"
-#font-1 = SauceCodePro Nerd Font:style=Bold:size=15;2
-#font-0 = Roboto:size=11;1
-padding-right = 1
-module-margin = 1
-modules-left   = bspwm xwindow ethernet
-modules-center = date
-modules-right  = wlan vpn-nordvpn-status vpn-wireguard-wg cpu memory battery backlight pulseaudio
-cursor-click = pointer
-tray-position = right
-tray-padding = 2
-tray-reparent = true
-tray-maxsize=1000
-
-
-#########################################################
-[bar/extbar1]
-monitor = DP-1
-enable-ipc = true
-wm-restack = bspwm
-height = 20
-foreground = ${colors.foreground}
-background = ${colors.background}
-font-1 = SauceCodePro Nerd Font:style=Bold:size=15;2
-font-0 = Roboto:size=23;1
-padding-right = 1
-module-margin = 1
-modules-left   = bspwm
-modules-center = date
-modules-right  = 
-cursor-click = pointer
-
-[bar/extbar2]
-monitor = DP2-2
-enable-ipc = true
-wm-restack = bspwm
-height = 22
-foreground = ${colors.foreground}
-background = ${colors.background}
-font-0 = SauceCodePro Nerd Font:style=Bold:size=10;2
-padding-right = 1
-module-margin = 1
-modules-left   = bspwm ethernet wlan
-modules-center = date
-modules-right  = cpu temperature memory alsa sysmenu
-cursor-click = pointer
-tray-position = right
-
 
 ##################################################
 ###                  MODULES                   ###

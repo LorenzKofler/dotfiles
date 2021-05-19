@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	stl
+	terminal
 
 # program launcher
 super + @space
@@ -14,10 +14,10 @@ super + w
         rofi -show window
 
 super + p
-	rofi-gopass.sh
+	rofi_gopass
 
 super + e
-	stl -e lf
+	terminal -e lf
 
 super + t
         open_todo
@@ -203,4 +203,4 @@ super + shift + x
         betterlockscreen -l dim
 
 ctrl + Escape
-        /usr/local/bin/scripts/toggle_xkbmap
+        toggle_xkbmap

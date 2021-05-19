@@ -32,6 +32,7 @@ map o &mimeopen $f
 map O $mimeopen --ask $f
 
 
+
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
 # use either file extensions and/or mime types here. Below uses an editor for
@@ -39,8 +40,9 @@ map O $mimeopen --ask $f
 cmd open ${{
     case $(file --mime-type $f -b) in
         text/*) nvim $fx;;
-        image/*) setsid ssxiv $fx > /dev/null 2> /dev/null &;;
-	*) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
+#        image/*) setsid ssxiv $fx > /dev/null 2> /dev/null &;
+	#*) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
+        *) setsid xdg-open "$fx" > /dev/null 2> /dev/null &
     esac
 }}
 
@@ -50,7 +52,7 @@ cmd open_with ${{
 map e push :open_with<space>
 
 cmd terminal ${{
-	setsid stl > /dev/null 2> /dev/null &
+	setsid terminal > /dev/null 2> /dev/null &
 
 }}
 map t terminal

@@ -117,10 +117,9 @@ compinit
 preexec () { echo -ne "\e[0m" }
 
 # ALIAS
-#alias ls='ls --color=auto'
 alias ls='exa --color=auto --group-directories-first'
-#alias ll='ls -lah --color=auto'
 alias ll='exa -lah'
+alias ssh='TERM=st-256color ssh'
 alias fh='cd ~/doc/fhooe/6sem/'
 alias ..='cd ..'
 alias xclip='xclip -selection c'
@@ -140,7 +139,7 @@ alias mv='mv -i'
 alias grep='grep --color=auto'
 alias st='stl'
 alias o='less'
-alias ba='cd /home/lorenz/doc/fhooe/6sem/bachelorarbeit/HgbThesisDE/'
+alias ba='cd /home/lorenz/doc/fhooe/6sem/Bachelorthesis'
 alias alsamixer='alsamixer -c 0'
 alias tp='trash-put'
 # git 

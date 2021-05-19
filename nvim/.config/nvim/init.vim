@@ -28,6 +28,8 @@ autocmd BufWritePost /home/lorenz/doc/fhooe/6sem/bachelorarbeit/HgbThesisDE/*.te
 autocmd BufWritePost /home/lorenz/doc/Bewerbung/cv/Lorenz_Kofler_CV.tex call system('pdflatex Lorenz_Kofler_CV.tex')
 
 map <C-n> :NERDTreeToggle<CR>
+map <C-b> :NERDTree<CR>
+
 
 call deoplete#custom#var('omni', 'input_patterns', {
       \ 'tex': g:vimtex#re#deoplete
