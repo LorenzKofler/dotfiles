@@ -8,10 +8,10 @@ super + Return
 
 # program launcher
 super + @space
-        rofi -show drun
+        run_rofi -show drun
 
 super + w
-        rofi -show window
+        run_rofi -show window
 
 super + p
 	rofi_gopass

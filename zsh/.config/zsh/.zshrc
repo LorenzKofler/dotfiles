@@ -119,7 +119,7 @@ preexec () { echo -ne "\e[0m" }
 # ALIAS
 alias ls='exa --color=auto --group-directories-first'
 alias ll='exa -lah'
-alias ssh='TERM=st-256color ssh'
+alias ssh='TERM=xterm-256color ssh'
 alias fh='cd ~/doc/fhooe/6sem/'
 alias ..='cd ..'
 alias xclip='xclip -selection c'
@@ -136,12 +136,14 @@ alias sc="cd /usr/local/bin/scripts"
 alias n="cd /home/lorenz/doc/myfiles/notes"
 alias rm='echo "This is not the command you are looking for."; false'
 alias mv='mv -i'
-alias grep='grep --color=auto'
+alias cp='cp -ri'
+alias grep='grep --color=always'
 alias st='stl'
 alias o='less'
 alias ba='cd /home/lorenz/doc/fhooe/6sem/Bachelorthesis'
 alias alsamixer='alsamixer -c 0'
 alias tp='trash-put'
+alias gcc'gcc -Wall -std=c99 -pedantic'
 # git 
 alias ga='git add'
 alias gc='git commit'

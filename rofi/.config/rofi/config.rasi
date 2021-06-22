@@ -12,7 +12,7 @@ configuration {
     background-color: #1d1f21;
     border-color: #00000000;
     text-color: #EFEFEF;
-    font: "Roboto 16";
+    font: "Roboto 28";
 }
  
 #window {
