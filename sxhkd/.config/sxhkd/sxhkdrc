@@ -164,7 +164,7 @@ super + XF86Display
         /usr/local/bin/scripts/xrandr/bspwm/DP-1_only.sh
         
 XF86Display
-        /usr/local/bin/scripts/xrandr/bspwm/eDP-1_only.sh
+        /home/lorenz/repos/scripts/bspwm/default.sh
 
 XF86Favorites
         /usr/local/bin/scripts/xrandr/bspwm/eDP-1_extend_DP-1.sh

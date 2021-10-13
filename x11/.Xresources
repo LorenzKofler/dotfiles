@@ -3,6 +3,8 @@ Xft.lcdfilter:  lcddefault
 Xft.hintstyle:  hintfull
 Xft.hinting: 1
 Xft.antialias: 1
+
 Xft.rgba: rgb
-
-
+Xft.dpi: 192
+Xcursor.theme: macOSBigSur
+Xcursor.size: 8

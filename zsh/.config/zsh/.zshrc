@@ -134,6 +134,7 @@ alias udu='udisksctl unmount -b'
 alias pro_cmd="vim /home/lorenz/doc/notes/programms_commands.md"
 alias sc="cd /usr/local/bin/scripts"
 alias n="cd /home/lorenz/doc/myfiles/notes"
+alias t="cd /home/lorenz/doc/myfiles/notes/obsidian_notes/tuwien"
 alias rm='echo "This is not the command you are looking for."; false'
 alias mv='mv -i'
 alias cp='cp -ri'
