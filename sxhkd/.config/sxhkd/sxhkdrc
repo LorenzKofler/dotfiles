@@ -14,7 +14,7 @@ super + w
         run_rofi -show window
 
 super + p
-	rofi_gopass
+	rofi-pass
 
 super + e
 	terminal -e lf
@@ -200,7 +200,7 @@ super + ctrl + p
         dmenu_run
 
 super + shift + x
-        betterlockscreen -l dim
+        i3lock
 
 ctrl + Escape
         toggle_xkbmap

@@ -1,16 +1,26 @@
-set shiftwidth=2 expandtab smarttab
+syntax on
+set noerrorbells
+set tabstop=4 softtabstop=4
+set shiftwidth=4 expandtab smarttab
+set smartindent
 set autoread
+set smartcase
 set relativenumber
 set number
+set incsearch
 autocmd FocusGained * silent! checktime
+
+
 call plug#begin()
+Plug 'morhetz/gruvbox'
 Plug 'Shougo/deoplete.nvim'
 Plug 'honza/vim-snippets'
 Plug 'preservim/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'lervag/vimtex'
+Plug 'sheerun/vim-polyglot'
+Plug 'mbbill/undotree'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'morhetz/gruvbox'
 call plug#end()
 
 function! AutoCommit()
@@ -36,3 +46,4 @@ call deoplete#custom#var('omni', 'input_patterns', {
       \})
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+let g:mkdp_auto_start = 0
