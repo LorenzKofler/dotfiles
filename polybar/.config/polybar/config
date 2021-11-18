@@ -1,291 +1,379 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
 [colors]
-foreground         = #a89984
-foreground-alt     = #666666
-foreground-focused = #282c34
-background         = #282828
-background-focused = #abb2bf
-red    = #be5046
-green  = #98c379
-yellow = #d19a66
-blue = = #83a598
+background = ${xrdb:background}
+;foreground = #676b73 
+foreground = ${xrdb:foreground}
 
-###################################################
+color0 = ${xrdb:color0}
+color1 = ${xrdb:color1}
+color2 = ${xrdb:color2}
+color3 = ${xrdb:color3}
+color4 = ${xrdb:color4}
+color5 = ${xrdb:color5}
+color6 = ${xrdb:color6}
+color7 = ${xrdb:color7}
+color8 = ${xrdb:color8}
+color9 = ${xrdb:color9}
+color10 = ${xrdb:color10}
+color11 = ${xrdb:color11}
+color12 = ${xrdb:color12}
+color13 = ${xrdb:color13}
+color14 = ${xrdb:color14}
+color15 = ${xrdb:color15}
+dark-light = #272A2B 
+active-light = #313435
+
 [bar/laptopbar]
-monitor = ${env:MONITOR:}
-enable-ipc = true
-#dpi = 120
-dpi = ${env:MON_DPI:}
-width = 100%
-height = 40
-offset-x = 0
-offset-y = 0
-;bottom = true
-
-background = #5a000000
-foreground = #eee
-
-underline-size = 2
-underline-color = #eee
-
-spacing = 0
-padding-left = 0
-padding-right = 0
-module-margin-left = 0 
-module-margin-right = 0
-
-font-0 = "SourceCodePro:style=Regular:pixelsize=10;2"
-font-1 = FontAwesome5Free:style=Solid:size=10;4
-font-2 = FontAwesome5Free:style=Regular:size=10;4
-font-3 = FontAwesome5Brands:style=Regular:size=10;4
-font-4 = "Wuncon Siji:style=Regular:size=10;3"
-
-modules-left = bspwm xwindow
-modules-center = 
-modules-right = battery volume date powermenu
-
 tray-position = right
-tray-padding = 2
-tray-background = #000000
+monitor = ${env:MONITOR:}
+width =  100%
+height = 40
+dpi = 120
+padding-left =1
+padding-right =0
 
+background = ${colors.background}
+foreground = ${colors.foreground}
+bottom = false
+border-top-size = 5
+border-bottom-size = 5
+border-top-color = ${colors.background}
+border-bottom-color = ${colors.background}
+
+line-size = 1
 wm-restack = bspwm
 
-scroll-up = bspwm-desknext
-scroll-down = bspwm-deskprev
-####################################################
+modules-left = round-left bspwm round-right empty-space  round-left xwindow round-right
+modules-center = date 
+modules-right = pulseaudio battery round-left wlan round-right round-left xbacklight  round-right
+font-0 = JetBrainsMono Nerd Font:style=Bold:pixelsize=15;3
+font-1 = JetBrainsMono Nerd Font:size=20;5
+font-2 = unifont:fontformat=truetype:size=15;3
+font-3 = MaterialIcons:style=Bold:size=18;3
+
+[module/date]
+type = internal/date
+interval = 1
+label = %time% - %date%
+time     = %r
+date     = %a, %b %d
+time-alt = %t
+date-alt = %a, %b %d, %y
+format-foreground = #81A1C1
 
 
+[module/polywins]
+type = custom/script
+exec = ~/.config/polybar/scripts/polywins.sh 2>/dev/null
+format = <label>
+format-background = #2a2e36
+label = %output%
+label-padding = 0
+tail = true
 
-; MODULES
+[module/empty-space]
+type = custom/text
+content = "  "
 
+[module/round-left]
+type = custom/text
+content = %{T3}%{T-}
+content-foreground = #2a2e36
 
-##################################################
-###                  MODULES                   ###
-##################################################
+[module/round-right]
+type = custom/text
+content = %{T3}%{T-}
+content-foreground = #2a2e36
+
+[module/roundd-left]
+type = custom/text
+content = %{T3}%{T-}
+content-foreground = #a3be8c 
+
+[module/roundd-right]
+type = custom/text
+content = %{T3}%{T-}
+content-foreground = #a3be8c
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 70
+
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+format-padding = 1
+label = %temperature%
+label-warn = %temperature%
+ramp-0 =  "󰜗" 
+ramp-font = 3
+ramp-foreground = #a4ebf3
+
 
 [module/bspwm]
 type = internal/bspwm
-label-focused       = %name%
-label-focused-empty = ·
-label-occupied      = %name%
 label-urgent        = %name%
-label-empty         = ·
+
 label-focused-padding        = 1
 label-focused-empty-padding  = 1
 label-occupied-padding       = 1
 label-urgent-padding         = 1
+
+ws-icon-0 = 1;%{F#F9DE8F}  
+ws-icon-1 = 2;%{F#ff9b93}   
+
+label-empty = %icon%  · 
+label-focused-empty = %icon%  %name%
+label-occupied = %icon%  %name%
+label-focused =  %icon%  %name%
 label-empty-padding          = 1
-label-focused-foreground       = ${colors.foreground-focused}
+label-focused-foreground = ${colors.foreground}
 label-focused-background       = ${colors.background-focused}
 label-focused-empty-foreground = ${colors.foreground-focused}
 label-focused-empty-background = ${colors.background-focused}
+label-occupied-foreground = #646870  
+label-occupied-background = #2a2e36
+label-empty-background = #2a2e36
 label-urgent-foreground        = ${colors.red}
 
 label-dimmed-foreground = ${colors.red}
 label-dimmed-focused-background = ${colors.red}
 
-#########################################################
-
-[module/bspwm1]
+[module/bspwm_1]
 type = internal/bspwm
 
-ws-icon-0 = web;
-ws-icon-1 = term;
-ws-icon-2 = chat;
-ws-icon-3 = code;
-ws-icon-4 = music;
-ws-icon-default = 
+pin-workspaces = true
+inline-mode = true
+enable-click = true
+enable-scroll = true
+reverse-scroll = false
 
-format = <label-state> <label-mode>
+format = <label-state>
 
-label-focused = %icon%
-label-focused-background = #88000000
-label-focused-underline= #ddd
-label-focused-padding = 4
+ws-icon-0 = 1;%{F#F9DE8F}  
+ws-icon-1 = 2;%{F#ff9b93}   
+ws-icon-2 = 3;%{F#95e1d3}    
+ws-icon-3 = 4;%{F#81A1C1}
+ws-icon-4 = 5;%{F#A3BE8C}
 
-label-occupied = %icon%
-label-occupied-padding = 4
+label-separator = " "
+label-separator-background = #2a2e36
 
-label-urgent = %icon%
-label-urgent-padding = 4
+label-focused =  %icon%  
+label-focused-foreground = ${colors.foreground}
+label-focused-padding = 1
+label-focused-background = #464a52
+label-focused-margin = 0 
+
+label-occupied =  %icon%  
+label-occupied-foreground = #646870  
+label-occupied-background = #2a2e36
+label-occupied-padding = 1
+label-occupied-margin = 0 
 
 label-empty = %icon%
-label-empty-foreground = #44ffffff
-label-empty-padding = 4
+label-empty-foreground =   ${colors.foreground}
+label-empty-padding = 1
+label-empty-background = #2a2e36
+label-empty-margin = 0 
 
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:120:...%
-label-padding = 4
 
-[module/date]
+label-urgent = %icon%
+label-urgent-foreground = #88C0D0
+label-urgent-background = #2a2e36
+label-urgent-padding = 1
+
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = true
+format-volume = <label-volume> <bar-volume>
+label-volume = " "  
+label-volume-foreground = ${colors.foreground}
+format-muted-foreground = ${colors.foreground}
+label-muted = "ﱝ "
+
+format-muted-padding = 1
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #61afef
+bar-volume-foreground-1 = #61afef
+bar-volume-foreground-2 = #61afef
+bar-volume-foreground-3 = #61afef
+bar-volume-foreground-4 = #61afef
+bar-volume-foreground-5 = #61afef
+bar-volume-foreground-6 = #61afef
+bar-volume-gradient = false
+bar-volume-indicator = 
+bar-volume-indicator-foreground = #61afef
+bar-volume-indicator-font = 2
+bar-volume-fill = ━ 
+bar-volume-fill-foreground = #61afef
+bar-volume-fill-font = 2
+bar-volume-empty = ━
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = #565c64
+format-volume-padding = 2
+
+[module/time]
 type = internal/date
+interval = 60
 
-; Seconds to sleep between updates
-interval = 1.0
+format = <label>
+format-background = #2a2e36
+format-foreground = #82868e
 
-; See "man date" for details on how to format the date string
-; NOTE: if you want to use syntax tags here you need to use %%{...}
-date = %a %b %d, 
+date = 󰥔 %H:%M%{F-}
+time-alt = 󰃭 %a, %b %d%{F-}
 
-; Optional time format
-time = %H:%M
+label = %date%%time%
 
-; if `date-alt` or `time-alt` is defined, clicking
-; the module will toggle between formats
-date-alt = %A, %d %B %Y
-time-alt = %H:%M:%S
+[module/mem]
+type = custom/script
+exec = free -m | sed -n 's/^Mem:\s\+[0-9]\+\s\+\([0-9]\+\)\s.\+/\1/p'
+format = <label>
+format-prefix = "﬙ " 
+label = %output% MB
+label-padding = 1
+format-prefix-foreground = #d19a66
 
-label = %date% %time%
-format =  <label>
-;format-background = #ddffffff
-format-background = #88000000
-;format-foreground = #333
-format-margin = 2
+[module/updates]
+type = custom/script
+exec = doas xbps-install -S > /dev/null 2>&1; xbps-updates
+format = <label>
+interval = 4600 
+label =  %output%  
+label-padding = 2
+label-foreground = #BF616A
 
-[module/padding]
-type = custom/text
-content = 	 
-content-foreground = #00000000
-content-background = #55000000
+[module/powermenu]
+type = custom/text 
+content =" " 
+content-padding = 2
+click-left = doas zzz &
+content-foreground = #f25287
+
+[module/wlan]
+type = internal/network
+interface = wlp0s20f3
+interval = 3.0
+format-connected = <label-connected>
+format-connected-prefix ="直  " 
+format-connected-background = #2a2e36
+format-connected-foreground = #A3BE8C
+label-connected = %essid%
+label-connected-foreground = #A3BE8C 
+label-connected-background = #2a2e36
+label-padding = 2
 
 [module/battery]
 type = internal/battery
-
-full-at = 99
-
 battery = BAT0
 adapter = AC0
-
-poll-interval = 5
+full-at = 98
 
 format-charging = <animation-charging> <label-charging>
+label-charging = %percentage%%
+format-charging-foreground = ${colors.color4}
+format-charging-background = ${colors.background}
+
 format-discharging = <ramp-capacity> <label-discharging>
-format-full = <ramp-capacity> <label-full>
-label-charging = %percentage%
-label-discharging = %percentage%
-label-full = %percentage%
-format-charging-padding = 2
-format-discharging-padding = 2
-format-full-padding = 2
+label-discharging = %percentage%%
+format-discharging-foreground = ${colors.foreground}
+format-discharging-background = ${colors.background}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+format-full-prefix = "  "
+format-full-prefix-foreground = #A0E8A2
+format-foreground = ${colors.color4}
+format-background = ${colors.background}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
+label-discharging-foreground = ${colors.foreground}
+ramp-capacity-foreground =  #A0E8A2  
+label-charging-foreground = ${colors.foreground}
+
+label-padding = 1
+
+ramp-capacity-0 = "  " 
+ramp-capacity-1 = "  " 
+ramp-capacity-2 = "  " 
+ramp-capacity-3 = "  " 
+ramp-capacity-4 = "  "
+
+
+animation-charging-0 = "  " 
+animation-charging-1 = "  " 
+animation-charging-2 = "  " 
+animation-charging-3 = "  " 
+animation-charging-4 = "  "
+
+
+animation-charging-foreground = #DF8890
 animation-charging-framerate = 750
+
+format-charging-padding = 1
+format-discharging-padding = 1
+
+[module/volume]
+type = custom/script
+exec = amixer get Master | awk '$0~/%/{print $4}' | tr -d '[]'
+format = <label>
+internal = 5.0
+label = %output% 
+label-foreground = #BF616A
+label-padding = 1
+
+[module/xbacklight]
+type = internal/backlight
+card = intel_backlight
+format = <label>
+format-prefix = "  "
+label = %percentage%
+label-background = #2a2e36
+format-prefix-background = #2a2e36
+format-prefix-foreground = #61afef
+label-foreground = #D8DEE9
+format-padding = 0
 
 [module/backlight]
 type = internal/backlight
-
 card = intel_backlight
-enable-scroll = true
+format = <ramp>  <label>
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
 
-format = <ramp> <label>
-label = %percentage%
+[module/cpu]
+type = internal/cpu
+interval = 2.5
 
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
+format-prefix ="  " 
+format =  <label> 
 
-[module/volume]
-type = internal/alsa
+label = CPU %percentage%%
+format-background = #2a2e36
+format-foreground = #989cff
 
-format-volume = <ramp-volume> <label-volume>
-format-muted = <label-muted>
-label-volume = %percentage%
-label-muted =   muted
-label-muted-foreground = #aaa
-format-volume-padding = 0
-format-muted-padding = 0
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:60:...%
+label-padding = 0
+label-background = #2a2e36
+label-foreground = #95e1d3
 
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-ramp-headphones-0 = 
 
-[module/spotify]
-type = custom/script
-
-exec = /home/gamehelp16/Documents/np
-interval = 1
-
-format = <label>   
-;format-background = #dd00c6e0
-;format-foreground = #fff
-;format-padding = 4
-
-label = %output%
-
-[module/powermenu]
-type = custom/menu
-
-label-open =   
-;label-open-background = #dd0000
-;label-open-foreground = #fff
-label-close = cancel
-;label-close-background = #dd0000
-;label-close-foreground = #fff
-label-open-padding = 0
-label-close-padding = 0 
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-menu-0-0-padding = 3
-menu-0-1-padding = 3
-
-menu-1-0 = reboot?  
-menu-1-0-exec = sudo reboot
-menu-1-0-padding = 3
-
-menu-2-0 = power off?  
-menu-2-0-exec = sudo poweroff
-menu-2-0-padding = 3
-
-[module/mpd]
-type = internal/mpd
-
-host = 127.0.0.1
-port = 6600
-password = 
-
-; Seconds to sleep between progressbar/song timer sync
-; Default: 1
-interval = 2
-
-; Available tags:
-;   <label-song> (default)
-;   <label-time>
-;   <bar-progress>
-;   <toggle> - gets replaced with <icon-(pause|play)>
-;   <toggle-stop> - gets replaced with <icon-(stop|play)>
-;   <icon-random>
-;   <icon-repeat>
-;   <icon-repeatone>
-;   <icon-prev>
-;   <icon-stop>
-;   <icon-play>
-;   <icon-pause>
-;   <icon-next>
-;   <icon-seekb>
-;   <icon-seekf>
-format-online =    <label-song>
-
-; Available tokens:
-;   %artist%
-;   %album%
-;   %date%
-;   %title%
-; Default: %artist% - %title%
-label-song = %title%
-format-online-padding = 3
