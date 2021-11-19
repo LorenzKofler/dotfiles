@@ -3,7 +3,6 @@ font:
   normal:
     family: Source Code Pro
     style: Regular
-
   bold:
     family: Source Code Pro
     style: Bold
@@ -65,4 +64,4 @@ colors:
     magenta: '#6e4962'
     cyan: '#5c8482'
     white: '#828282'
-background_opacity: 0.8
+background_opacity: 0.9

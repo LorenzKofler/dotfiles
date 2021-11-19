@@ -153,7 +153,7 @@ alias o='less'
 alias ba='cd /home/lorenz/doc/fhooe/6sem/Bachelorthesis'
 alias alsamixer='alsamixer -c 0'
 alias tp='trash-put'
-alias gcc'gcc -Wall -std=c99 -pedantic'
+alias gcc='gcc -Wall -std=c99 -pedantic'
 # git 
 alias ga='git add'
 alias gc='git commit'

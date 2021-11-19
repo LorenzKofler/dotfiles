@@ -8,10 +8,10 @@ super + Return
 
 # program launcher
 super + @space
-        run_rofi -show drun
+        rofi -show drun
 
 super + w
-        run_rofi -show window
+        rofi -show window
 
 super + p
 	rofi-pass
@@ -157,8 +157,6 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-
-
 # shortcuts stuff
 super + XF86Display
         /usr/local/bin/scripts/xrandr/bspwm/DP-1_only.sh
@@ -170,25 +168,25 @@ XF86Favorites
         picom_start_stop.sh
 
 XF86MonBrightnessUp
-        light_up
+        light -A 5
+
+XF86MonBrightnessDown
+        light -U 5
 
 XF86Tools
         next_background
-
-XF86MonBrightnessDown
-        light_down
 
 super + XF86MonBrightnessUp
         toggle_redshift
 
 XF86AudioRaiseVolume
-        audio_up
+        pactl set-sink-volume @DEFAULT_SINK@ +10%
 
 XF86AudioLowerVolume
-        audio_down 
+        pactl set-sink-volume @DEFAULT_SINK@ -10%
 
 XF86AudioMute
-        audio_mute
+        pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 super + comma
         bspc monitor --focus next
@@ -200,7 +198,7 @@ super + ctrl + p
         dmenu_run
 
 super + shift + x
-        i3lock
+        xsecurelock 
 
 ctrl + Escape
         toggle_xkbmap
