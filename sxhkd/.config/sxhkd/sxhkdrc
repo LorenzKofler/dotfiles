@@ -167,7 +167,7 @@ XF86Display
         /home/lorenz/repos/scripts/bspwm/default.sh
 
 XF86Favorites
-        /usr/local/bin/scripts/xrandr/bspwm/eDP-1_extend_DP-1.sh
+        picom_start_stop.sh
 
 XF86MonBrightnessUp
         light_up

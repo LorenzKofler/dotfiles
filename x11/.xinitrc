@@ -8,7 +8,6 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 
 if [ -f $sysresources ]; then
     xrdb -merge $sysresources
-
 fi
 
 if [ -f $sysmodmap ]; then
@@ -33,14 +32,12 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 xinput set-prop "SYNA8005:00 06CB:CD8C Touchpad" "libinput Accel Speed" 0.9
 xinput set-prop "SYNA8005:00 06CB:CD8C Touchpad" "libinput Tapping Enabled" 1
 xset +fp /home/lorenz/.config/fonts
 xset fp rehash
-
-
 betterlockscreen -w dim
+bat_notify.sh &
 dunst &
 nm-applet &
 blueman-applet &

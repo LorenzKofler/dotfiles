@@ -17,9 +17,11 @@
 ;==========================================================
 
 [colors]
-background = ${xrdb:background}
+background = #00000000
+background-focused = #14161a
 ;foreground = #676b73 
 foreground = ${xrdb:foreground}
+bubble = #2a2e36
 
 color0 = ${xrdb:color0}
 color1 = ${xrdb:color1}
@@ -42,12 +44,19 @@ active-light = #313435
 
 [bar/laptopbar]
 tray-position = right
+tray-background = ${colors.bubble}
+tray-detached = true
+tray-padding = 10
+tray-offset-x = -3
+tray-maxsize = 10
+tray-offset-y = 0
 monitor = ${env:MONITOR:}
 width =  100%
 height = 40
 dpi = 120
-padding-left =1
-padding-right =0
+padding-left = 1
+padding-right = 9
+offset-y = 10
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -61,9 +70,9 @@ line-size = 1
 wm-restack = bspwm
 
 modules-left = round-left bspwm round-right empty-space  round-left xwindow round-right
-modules-center = date 
-modules-right = pulseaudio battery round-left wlan round-right round-left xbacklight  round-right
-font-0 = JetBrainsMono Nerd Font:style=Bold:pixelsize=15;3
+modules-center = round-left date round-right
+modules-right = round-left pulseaudio round-right empty-space round-left battery round-right empty-space round-left wlan round-right empty-space round-left xbacklight  round-right empty empty-space round-left
+font-0 = JetBrainsMono Nerd Font:style=Bold:pixelsize=15;5
 font-1 = JetBrainsMono Nerd Font:size=20;5
 font-2 = unifont:fontformat=truetype:size=15;3
 font-3 = MaterialIcons:style=Bold:size=18;3
@@ -74,10 +83,10 @@ interval = 1
 label = %time% - %date%
 time     = %r
 date     = %a, %b %d
-time-alt = %t
+time-alt = %r
 date-alt = %a, %b %d, %y
 format-foreground = #81A1C1
-
+format-background = ${colors.bubble}
 
 [module/polywins]
 type = custom/script
@@ -136,17 +145,18 @@ label-focused-empty-padding  = 1
 label-occupied-padding       = 1
 label-urgent-padding         = 1
 
-ws-icon-0 = 1;%{F#F9DE8F}  
+ws-icon-0 = 1;%{F#F9DE8F}
 ws-icon-1 = 2;%{F#ff9b93}   
+
 
 label-empty = %icon%  · 
 label-focused-empty = %icon%  %name%
 label-occupied = %icon%  %name%
 label-focused =  %icon%  %name%
 label-empty-padding          = 1
-label-focused-foreground = ${colors.foreground}
 label-focused-background       = ${colors.background-focused}
-label-focused-empty-foreground = ${colors.foreground-focused}
+label-focused-foreground = #95e1d3
+label-focused-empty-foreground = #95e1d3
 label-focused-empty-background = ${colors.background-focused}
 label-occupied-foreground = #646870  
 label-occupied-background = #2a2e36
@@ -207,9 +217,11 @@ format-volume = <label-volume> <bar-volume>
 label-volume = " "  
 label-volume-foreground = ${colors.foreground}
 format-muted-foreground = ${colors.foreground}
+format-volume-background = ${colors.bubble}
+format-muted-background = ${colors.bubble}
 label-muted = "ﱝ "
 
-format-muted-padding = 1
+format-muted-padding = 0
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #61afef
@@ -229,7 +241,7 @@ bar-volume-fill-font = 2
 bar-volume-empty = ━
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = #565c64
-format-volume-padding = 2
+format-volume-padding = 0
 
 [module/time]
 type = internal/date
@@ -277,10 +289,10 @@ format-connected = <label-connected>
 format-connected-prefix ="直  " 
 format-connected-background = #2a2e36
 format-connected-foreground = #A3BE8C
-label-connected = %essid%
+label-connected = %local_ip% %essid%
 label-connected-foreground = #A3BE8C 
 label-connected-background = #2a2e36
-label-padding = 2
+label-padding = 0
 
 [module/battery]
 type = internal/battery
@@ -291,17 +303,17 @@ full-at = 98
 format-charging = <animation-charging> <label-charging>
 label-charging = %percentage%%
 format-charging-foreground = ${colors.color4}
-format-charging-background = ${colors.background}
+format-charging-background = ${colors.bubble}
 
 format-discharging = <ramp-capacity> <label-discharging>
 label-discharging = %percentage%%
 format-discharging-foreground = ${colors.foreground}
-format-discharging-background = ${colors.background}
+format-discharging-background = ${colors.bubble}
 
 format-full-prefix = "  "
 format-full-prefix-foreground = #A0E8A2
 format-foreground = ${colors.color4}
-format-background = ${colors.background}
+format-background = ${colors.bubble}
 
 label-discharging-foreground = ${colors.foreground}
 ramp-capacity-foreground =  #A0E8A2  
@@ -371,9 +383,14 @@ format-foreground = #989cff
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:60:...%
-label-padding = 0
+format = <label>
+format-prefix = []= 
+label-empty = " "
+label = %title:0:50:...%
+label-padding = 1
 label-background = #2a2e36
+format-background = #2a2e36
 label-foreground = #95e1d3
+format-foreground = #95e1d3
 
 
