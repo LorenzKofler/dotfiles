@@ -162,7 +162,7 @@ super + XF86Display
         /usr/local/bin/scripts/xrandr/bspwm/DP-1_only.sh
         
 XF86Display
-        /home/lorenz/repos/scripts/bspwm/default.sh
+        screenlayout -s default
 
 XF86Favorites
         picom_start_stop.sh
