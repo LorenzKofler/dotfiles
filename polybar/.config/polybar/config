@@ -48,13 +48,13 @@ tray-background = ${colors.background}
 tray-detached = true
 tray-padding = 5
 tray-offset-x = -3
-tray-maxsize = 4
+tray-maxsize = 1000
 tray-offset-y = 0
 monitor = ${env:MONITOR:}
 width =  100%
 dpi = ${env:MON_DPI:}
 height = 2%
-padding-left = 1
+padding-left = 6
 padding-right = 9
 effset-y = 0.5%
 background = ${colors.background}
@@ -69,9 +69,9 @@ wm-restack = bspwm
 
 modules-left = round-left bspwm round-right empty-space  round-left xwindow round-right
 modules-center = round-left date round-right
-modules-right = round-left pulseaudio round-right empty-space round-left battery round-right empty-space round-left wlan round-right empty-space round-left xbacklight  round-right empty empty-space 
+modules-right = round-left pulseaudio round-right empty-space round-left battery round-right empty-space round-left wlan round-right empty-space round-left xbacklight  round-right empty-space
 font-0 = JetBrainsMono Nerd Font:style=Bold:pixelsize=9;2%
-font-1 = JetBrainsMono Nerd Font:size=15;4%
+font-1 = JetBrainsMono Nerd Font:size=14;6%
 font-2 = unifont:fontformat=truetype:size=10;3
 font-3 = MaterialIcons:style=Bold:size=13;3
 
