@@ -154,7 +154,9 @@ alias ba='cd /home/lorenz/doc/fhooe/6sem/Bachelorthesis'
 alias alsamixer='alsamixer -c 0'
 alias tp='trash-put'
 alias gcc='gcc -Wall -std=c99 -pedantic'
+alias lf=lfcd
 # git 
+#
 alias ga='git add'
 alias gc='git commit'
 alias s='git status'
@@ -194,3 +196,9 @@ bindkey "^Y" forward-char
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+LFCD_PATH="/home/lorenz/.config/lf/lfcd.sh"
+if [ -f "$LFCD_PATH" ]; then
+    source "$LFCD_PATH"
+fi
+

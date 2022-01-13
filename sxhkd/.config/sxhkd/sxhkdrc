@@ -24,10 +24,10 @@ super + t
 
 super + f
 	brave
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
-
 
 super + s : {h,j,k,l}
     STEP=90; SELECTION={1,2,3,4}; \

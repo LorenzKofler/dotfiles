@@ -71,7 +71,7 @@ modules-left = round-left bspwm round-right empty-space  round-left xwindow roun
 modules-center = round-left date round-right
 modules-right = round-left pulseaudio round-right empty-space round-left battery round-right empty-space round-left wlan round-right empty-space round-left xbacklight  round-right empty-space
 font-0 = JetBrainsMono Nerd Font:style=Bold:pixelsize=9;2%
-font-1 = JetBrainsMono Nerd Font:size=14;6%
+font-1 = JetBrainsMono Nerd Font:size=15;4%
 font-2 = unifont:fontformat=truetype:size=10;3
 font-3 = MaterialIcons:style=Bold:size=13;3
 
@@ -155,8 +155,9 @@ label-focused-background       = ${colors.background-focused}
 label-focused-foreground = #95e1d3
 label-focused-empty-foreground = #95e1d3
 label-focused-empty-background = ${colors.background-focused}
-label-occupied-foreground = #646870  
+label-occupied-foreground = #95e1d3
 label-occupied-background = #2a2e36
+label-empty-foreground =   ${colors.foreground}
 label-empty-background = #2a2e36
 label-urgent-foreground        = ${colors.red}
 
@@ -196,7 +197,6 @@ label-occupied-padding = 1
 label-occupied-margin = 0 
 
 label-empty = %icon%
-label-empty-foreground =   ${colors.foreground}
 label-empty-padding = 1
 label-empty-background = #2a2e36
 label-empty-margin = 0 
