@@ -160,6 +160,7 @@ alias lf=lfcd
 alias ga='git add'
 alias gc='git commit'
 alias s='git status'
+alias mpv='mpv --gpu-context=wayland'
 ex ()
 {
   if [ -f $1 ] ; then

@@ -26,6 +26,7 @@ Plug 'mbbill/undotree'
 Plug 'plasticboy/vim-markdown'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 call plug#end()
 
 
