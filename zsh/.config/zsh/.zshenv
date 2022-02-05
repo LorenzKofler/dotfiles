@@ -25,3 +25,12 @@ set runtimepath=$XDG_CONFIG_HOME/vim,$VIMRUNTIME,$XDG_CONFIG_HOME/vim/after
 #export QT_AUTO_SCREEN_SET_FACTOR=0
 #export QT_SCALE_FACTOR=2
 #export QT_FONT_DPI=96
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Wayland
+export GDK_BACKEND=wayland
+export MOX_ENABLE_WAYLAND=true
+export MOZ_ENABLE_WAYLAND=1
+export XDG_CURRENT_DESKTOP=sway
+export QT_QPA_PLATFORM=wayland
+
