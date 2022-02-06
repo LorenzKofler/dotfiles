@@ -50,8 +50,8 @@ set $lockman $HOME/repos/scripts/lockman.sh
 
 exec swayidle -w \
     timeout 600 $lockman \
-   // timeout 570 'swaymsg "output * dpms off"' \
-   // resume 'swaymsg "output * dpms on"' \
+    timeout 570 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
     before-sleep $lockman \
 
 bindsym $mod+Shift+x exec $lockman
