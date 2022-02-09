@@ -44,4 +44,4 @@ colors:
     cyan: "#42717b"
     white: "#dddddd"
 window:
-  opacity: 0.4
+  opacity: 0.8

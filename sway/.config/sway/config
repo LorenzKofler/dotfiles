@@ -19,32 +19,18 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
-#set $browser brave --enable-features=UseOzonePlatform --ozone-platform=wayland 
-#set $browser brave --enable-features=UseOzonePlatform --ozone-platform=wayland --webrtc-max-cpu-consumption-percentage=100 --enable-features=VaapiVideoDecoder 
-#set $browser chromium
 set $browser brave
-#set $browser brave --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=VaapiVideoDecoder
 set $menu fuzzel -w 60 -D yes
 set $passmgr fuzzel-pass.sh
 
 input * xkb_layout "eu" 
 
-default_border none
-gaps inner 10
-gaps outer 5
+# Autostart
+exec_always /home/lorenz/repos/scripts/swaybg.sh
 exec autotiling -w 1 2 3 4 5 6 7 8 9 0
+exec dunst
+exec cbatticon
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-
-output "*" background "/home/lorenz/pics/wallpaper2/wallhaven-6q9vp7.jpg" fill
-
-# output eDP-1 resolution 3840x2160 
-# output DP-2 resolution 2560x1440
-# output DP-1 resolution 1920x1080
 
 set $lockman $HOME/repos/scripts/lockman.sh
 
@@ -53,6 +39,11 @@ exec swayidle -w \
     timeout 570 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
     before-sleep $lockman \
+
+
+default_border none
+gaps inner 10
+gaps outer 5
 
 bindsym $mod+Shift+x exec $lockman
 set $mon1 DP-1
@@ -107,9 +98,10 @@ bindsym $mod+p exec $passmgr
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
+bindsym XF86Tools exec --no-startup-id redshift.sh
 
 bindsym $mod+t exec open_todo
 

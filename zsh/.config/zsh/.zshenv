@@ -6,7 +6,7 @@ export TERMINAL='stl'
 export TERM="xterm-256color"
 export LIBVA_DRIVER_NAME="iHD"
 export MESA_GLSL_CACHE_DISABLE=true
-export PATH=/usr/local/bin/scripts/private:/usr/local/bin/scripts/scripts:/usr/local/bin/scripts/xrandr:$PATH
+export PATH=/usr/local/bin/scripts/:$PATH
 export LD_LIBRARY_PATH=/usr/local/lib
 
 #Programms
