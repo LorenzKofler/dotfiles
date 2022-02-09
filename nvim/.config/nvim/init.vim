@@ -28,6 +28,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 
@@ -58,4 +59,5 @@ filetype plugin indent on
 filetype indent on
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_compiler_method = 'latexrun'
+let g:deoplete#enable_at_startup = 1
 
