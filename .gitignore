@@ -14,5 +14,4 @@ zathura/.config/zathura/bookmarks
 zathura/.config/zathura/history
 zathura/.config/zathura/input-history
 zsh/.config/zsh/.p10k.zsh
-zsh/.config/zsh/.zcompdump
-zsh/.config/zsh/.zcompdump-loarch-5.8
+zsh/.config/zsh/.zcompdump*
