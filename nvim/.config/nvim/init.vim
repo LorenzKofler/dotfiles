@@ -1,7 +1,6 @@
 syntax on
 syntax enable
 
-
 set noerrorbells
 set autoindent
 set tabstop=2 softtabstop=2
@@ -10,6 +9,7 @@ set autoread
 set smartcase
 set number
 set incsearch
+set textwidth=70
 autocmd FocusGained * silent! checktime
 
 let g:polyglot_disabled = ['autoindent']
@@ -45,6 +45,8 @@ endfun
 autocmd BufWritePost /home/lorenz/doc/notes/*.md call AutoCommit()
 autocmd BufWritePost /home/lorenz/doc/fhooe/6sem/bachelorarbeit/HgbThesisDE/*.tex call system('lualatex main.tex')
 autocmd BufWritePost /home/lorenz/doc/Bewerbung/cv/Lorenz_Kofler_CV.tex call system('pdflatex Lorenz_Kofler_CV.tex')
+autocmd BufWritePost *.md call system('make')
+
 
 map <C-n> :NERDTreeToggle<CR>
 map <C-b> :NERDTree<CR>

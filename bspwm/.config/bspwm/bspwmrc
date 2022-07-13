@@ -15,6 +15,7 @@ xrdb ~/.Xresources &
 #next_background 
 #/usr/local/bin/scripts/xrandr/bspwm/eDP-1_only.sh
 
+bspc config pointer_motion_interval 60
 # Check main screen
 
 ###---Global Settings---###

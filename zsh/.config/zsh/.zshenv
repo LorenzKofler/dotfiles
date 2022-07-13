@@ -4,8 +4,8 @@ export EDITOR=nvim
 export PAGER=most
 export TERMINAL='stl'
 export TERM="xterm-256color"
-export LIBVA_DRIVER_NAME="iHD"
-export MESA_GLSL_CACHE_DISABLE=true
+#export LIBVA_DRIVER_NAME="iHD"
+#export MESA_GLSL_CACHE_DISABLE=true
 export PATH=/usr/local/bin/scripts/:$PATH
 export LD_LIBRARY_PATH=/usr/local/lib
 
@@ -33,4 +33,7 @@ export MOX_ENABLE_WAYLAND=true
 export MOZ_ENABLE_WAYLAND=1
 export XDG_CURRENT_DESKTOP=sway
 export QT_QPA_PLATFORM=wayland
+#
 
+# X11
+#export XDG_SESSION_TYPE=x11

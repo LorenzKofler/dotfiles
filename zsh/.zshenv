@@ -7,8 +7,8 @@ export EDITOR=nvim
 export PAGER=most
 export TERMINAL='stl'
 export TERM="xterm-256color"
-export LIBVA_DRIVER_NAME="iHD"
-export MESA_GLSL_CACHE_DISABLE=true
+#export LIBVA_DRIVER_NAME="iHD"
+#export MESA_GLSL_CACHE_DISABLE=true
 export PATH=/usr/local/bin/scripts/:$PATH
 export LD_LIBRARY_PATH=/usr/local/lib
 
@@ -31,11 +31,11 @@ set runtimepath=$XDG_CONFIG_HOME/vim,$VIMRUNTIME,$XDG_CONFIG_HOME/vim/after
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Wayland
-export GDK_BACKEND=wayland
-export MOX_ENABLE_WAYLAND=true
-export MOZ_ENABLE_WAYLAND=1
-export XDG_CURRENT_DESKTOP=sway
-export QT_QPA_PLATFORM=wayland
-
+#export GDK_BACKEND=wayland
+#export MOX_ENABLE_WAYLAND=true
+#export MOZ_ENABLE_WAYLAND=1
+#export XDG_CURRENT_DESKTOP=sway
+#export QT_QPA_PLATFORM=wayland
+#
 
 

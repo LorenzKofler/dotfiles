@@ -25,7 +25,8 @@ set $passmgr fuzzel-pass.sh
 
 input * xkb_layout "eu" 
 
-# Autostart
+# Autostart 
+## Wallpaper
 exec_always /home/lorenz/repos/scripts/swaybg.sh
 exec autotiling -w 1 2 3 4 5 6 7 8 9 0
 exec dunst
@@ -35,13 +36,13 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 set $lockman $HOME/repos/scripts/lockman.sh
 
 exec swayidle -w \
-    timeout 600 $lockman \
-    timeout 570 'swaymsg "output * dpms off"' \
-    resume 'swaymsg "output * dpms on"' \
+    timeout 300 $lockman \
+    #timeout 70 'swaymsg "output * dpms off"' \
+    #resume 'swaymsg "output * dpms on"' \
     before-sleep $lockman \
 
 
-default_border none
+default_border pixel 3
 gaps inner 10
 gaps outer 5
 
@@ -65,6 +66,7 @@ bindsym $mod+p exec $passmgr
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+output eDP-1 resolution 3840x2160 position 0,0 scale 1.6
 
 ### Idle configuration
 #
@@ -100,10 +102,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 bindsym XF86Tools exec --no-startup-id redshift.sh
 
 bindsym $mod+t exec open_todo
+bindsym $mod+n exec open_note
 
 ### Key bindings
 #
@@ -139,6 +141,7 @@ bindsym $mod+t exec open_todo
     bindsym $mod+$down focus down
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
+    bindsym $mod+semicolon focus right
     # Or use $mod+[up|down|left|right]
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
@@ -261,6 +264,10 @@ bar {
         background #323232
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
+}
+
+input 1739:52620:SYNA8005:00_06CB:CD8C_Touchpad {
+  tap enabled
 }
 
 include /etc/sway/config.d/*

@@ -16,6 +16,9 @@ Arc-Dark Color Scheme
 @define-color highlight #5294e2 ;
 @define-color base1  #404552 ;
 
+@define-color fontcolor  #bdae93;
+@define-color background_focused #427b58;
+
  
  
 @keyframes blink-warning {
@@ -57,12 +60,12 @@ Arc-Dark Color Scheme
 /* The whole bar */
 #waybar {
     background: transparent;
-    color: #bebebe;
    /* background-color: @base1; */
-    background-color: #2a2e36;
+    /*background-color: #83a598;*/
     font-family: JetBrainsMono Nerd Font;
     font-size: 11px;
-    color: #95e1d3;
+    min-height: 0;
+    color: @fontcolor;
 }
 
 /* Each module */
@@ -150,7 +153,7 @@ Arc-Dark Color Scheme
     border-bottom: 3px transparent;
     color:white;
     margin-left: 5px;
-    padding:7;
+    padding:7px;
   }
  
 #network.disconnected {
@@ -169,17 +172,19 @@ padding-top:6px;
 }
  
 #window {
+ font-size: 13px;	
 }
  
 #workspaces{
-font-size:13px;
-border-radius: 0;
-color: #95e1d3;
+    border-radius: 0;
+    font-size: 13px;
+    color: @fontcolor;
 }
 #workspaces button {
     margin-bottom: 0px;
     padding:0px;
     min-width: 25px;
+    color: @fontcolor;
 }
 
 #workspaces button.urgent {
@@ -187,14 +192,13 @@ color: #95e1d3;
         color: #c9545d;
 }
 #workspaces button.current_output {
-        /* border-bottom: 1px solid  @highlight; */
+         border-bottom: 1px solid  @highlight; 
         /* border-top: 3px solid  @highlight; */
         /* border-left: 1px solid  @highlight; */
         /* border-right: 1px solid  @highlight; */
         /* margin-bottom: 1px; */
-        padding-left:1;
-        background-color: #1e2126;
-    color: #95e1d3;
+        /*padding-left:1;*/
+       /*color: #076678;*/
 } 
 
 #workspaces button.focused {
@@ -204,7 +208,7 @@ color: #95e1d3;
   /*      border-right: 3px solid  @highlight; */
   /*      margin-bottom: 1px; */
   /*      padding-left:0; */
-    background-color: #000000;
+    background-color: @background_focused;
   }
 
 
@@ -230,11 +234,12 @@ window#waybar {
 	    background: transparent;
     }
     window > box {
- margin-top: 10px;
- margin-left: 10px;
- margin-right: 10px;
- background: #2a2e36;
+  padding: 0;
+  margin: 0;
+ margin-top: 0px;
+ margin-left: 0px;
+ margin-right: 0px;
+ background: #282828;
  /* border-bottom: 5px solid rgba(100, 114, 125, 0.5); */
- color: white;
 }
 

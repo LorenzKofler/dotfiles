@@ -23,7 +23,7 @@ super + t
         open_todo
 
 super + f
-	firefox
+	brave
 
 # make sxhkd reload its configuration files:
 super + Escape

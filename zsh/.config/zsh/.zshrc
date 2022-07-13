@@ -143,6 +143,7 @@ alias udu='udisksctl unmount -b'
 alias pro_cmd="vim /home/lorenz/doc/notes/programms_commands.md"
 alias sc="cd /usr/local/bin/scripts"
 alias t="cd /home/lorenz/doc/tuwien"
+alias n="cd /home/lorenz/doc/privat/notes"
 alias rm='echo "This is not the command you are looking for."; false'
 alias mv='mv -i'
 alias cp='cp -ri'
@@ -153,7 +154,7 @@ alias ba='cd /home/lorenz/doc/fhooe/6sem/Bachelorthesis'
 alias alsamixer='alsamixer -c 0'
 alias tp='trash-put'
 alias gcc='gcc -Wall -std=c99 -pedantic'
-alias lf=lfcd
+alias lf='lfcd'
 alias open='nohup nautilus . > /dev/null 2>&1 &'
 # git 
 #
