@@ -3,7 +3,7 @@
     "height": 25,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["custom/vpn","idle_inhibitor", "pulseaudio", "network", "backlight", "battery", "clock"],
+    "modules-right": ["custom/vpn","idle_inhibitor", "pulseaudio", "network", "backlight", "battery", "clock", "tray"],
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,

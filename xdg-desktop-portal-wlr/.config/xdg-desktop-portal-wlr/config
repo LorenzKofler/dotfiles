@@ -1,4 +1,5 @@
 [screencast]
-max_fps=8
+output_name=eDP-1
 chooser_type=simple
+max_fps=60
 chooser_cmd=slurp -f %o -or

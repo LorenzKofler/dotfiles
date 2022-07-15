@@ -62,6 +62,11 @@ window#waybar.hidden {
     color: #ffffff;
 }
 
+#tray {
+    color: #000000;
+    background-color: #ebdbb2;
+}
+
 #clock {
     color: #000000;
     background-color: #ebdbb2;
