@@ -3,10 +3,10 @@ application/x-dosexec=
 application/pdf=org.pwmt.zathura.desktop;
 image/png=org.nomacs.ImageLounge.desktop
 image/jpeg=org.nomacs.ImageLounge.desktop
-x-scheme-handler/http=brave-browser.desktop
-x-scheme-handler/https=brave-browser.desktop
-x-scheme-handler/about=chromium.desktop
-x-scheme-handler/unknown=chromium.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/about=firefox.desktop
+x-scheme-handler/unknown=firefox.desktop
 [Added Associations]
 image/jpep=org.nomacs.ImageLounge.desktop;
 
