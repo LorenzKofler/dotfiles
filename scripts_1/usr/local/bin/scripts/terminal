@@ -1,0 +1,5 @@
+#!/bin/bash
+# st -f "SourceCodePro-Medium:size=13" $@
+#WINIT_X11_SCALE_FACTOR=2.5 /usr/bin/alacritty $@
+#WINIT_X11_SCALE_FACTOR=2.5 /usr/bin/alacritty $@
+/usr/bin/alacritty $@

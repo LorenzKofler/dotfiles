@@ -1,0 +1,3 @@
+#!/bin/bash
+SERVER=ipax
+rsync -avz --delete /home/lorenz/repos/lorx.xyz/public/ ipax:/var/www/cabin

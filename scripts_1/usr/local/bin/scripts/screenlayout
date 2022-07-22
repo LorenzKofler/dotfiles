@@ -1,0 +1,60 @@
+#!/bin/bash
+# Sets the xrandr and bspwm configuration depending on HOSTNAME and SETTING.
+
+# Set default value
+SETTING='default'
+
+while getopts s: flag
+do
+    case "${flag}" in
+        s) SETTING=${OPTARG};;
+    esac
+done
+
+HOSTNAME=$(hostname)
+echo $SETTING
+
+if [ "$HOSTNAME" = "loarch" ]; then
+    if [ "$SETTING" = "default" ]; then
+        EXTRAS="sed -Ei 's/Xft.dpi: [0-9]+/Xft.dpi: 192/g' ~/.Xresources; xrdb -merge ~/.Xresources"
+        XRANDR="xrandr --output eDP-1 --primary --mode 3840x2160 --pos 0x0 --rotate normal 
+                       --output DP-1 --off --output HDMI-1 --off 
+                       --output DP-2 --off"
+        BSPWM="bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 0"
+
+
+    elif [ "$SETTING" = "home" ]; then
+        EXTRAS="/usr/bin/sed -Ei 's/Xft.dpi: [0-9]+/Xft.dpi: 120/g' ~/.Xresources"
+        XRANDR="xrandr --output eDP-1 --off 
+                        --output HDMI-1 --off 
+                        --output DP-2 --mode 2560x1440 --dpi 120 --pos 0x0 --rotate normal 
+                        --output DP-1 --mode 1920x1080 --scale 1x1 --pos 2560x0 --rotate normal"
+        BSPWM="bspc monitor DP-1 -d 6 7 8 9 0; 
+               bspc monitor DP-2 -d 1 2 3 4 5;"
+    fi
+elif [ "$HOSTNAME" = "haclo" ]; then
+    if [ "$SETTING" = "default" ]; then
+        EXTRAS=""
+        XRANDR="xrandr --output eDP --primary --mode 1920x1080 --pos 0x0 --rotate normal 
+                       --output DisplayPort-1 --off 
+                       --output HDMI-A-0 --off 
+                       --output DisplayPort-0 --off"
+        BSPWM="bspc monitor eDP -d 1 2 3 4 5 6 7 8 9 0"
+    elif [ "$SETTING" = "home" ]; then
+        EXTRAS=""
+        XRANDR="xrandr --output eDP --off 
+                       --output HDMI-A-0 --off 
+                       --output DisplayPort-0 --primary --mode 2560x1440 --pos 0x0 --rotate normal 
+                       --output DisplayPort-1 --mode 1920x1080 --pos 2560x0 --rotate normal"
+        BSPWM="bspc monitor DisplayPort-1 -d 6 7 8 9 0;
+               bspc monitor DisplayPort-0 -d 1 2 3 4 5"
+    fi
+fi
+
+# Execute commands
+eval $EXTRAS
+eval $XRANDR
+bspc wm -r
+start_polybar
+eval $BSPWM
+next_background

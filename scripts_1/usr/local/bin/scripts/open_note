@@ -1,0 +1,8 @@
+#!/bin/zsh
+note () {
+	d=`date -u '+%Y-%m-%d'`
+	file="${PWD}/${d}.md"
+	terminal -e nvim "$file"
+}
+cd /home/lorenz/doc/privat/notes/daily 
+note 
