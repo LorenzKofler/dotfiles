@@ -7,7 +7,9 @@ fi
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
-
+# Reverse search with arrow
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
 
 HISTFILE=~/.histfile
 HISTSIZE=10000
